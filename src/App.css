@@ -1,38 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+body {
+  background-color: black;
+  color: #d3d3d3;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+.hidden {
+  display: none;
+}
+h1 {
+  text-align: center;
+}
+
+/* ######## SEARCH ######## */
+
+.coinSearch {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgb(32, 1, 92);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding-top: 30px;
+  background: url(https://media.istockphoto.com/id/1331702867/photo/block-chain-concept.jpg?b=1&s=170667a&w=0&k=20&c=iOYdKBFv6uAigH_im_fMw6VSLqfM6ydS_FrAeQRbtks=)
+    no-repeat;
+  background-size: cover;
+}
+.coinInput {
+  margin-top: 10px;
+  width: 300px;
+  height: 40px;
+  border: 2px solid rgb(38, 0, 114);
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00071f, rgb(32, 1, 92));
+  color: #d3d3d3;
+  font-size: 1.5rem;
+  padding-left: 20px;
+}
+.coinInput:focus {
+  outline: none;
+}
+.coinButton {
+  margin-top: 20px;
+  border: 2px solid rgb(38, 0, 114);
+  background: linear-gradient(90deg, #00071f, rgb(32, 1, 92));
+  padding: 10px;
+  color: #d3d3d3;
+  border-radius: 10px;
+  box-shadow: 0px 8px 24px 0px rgb(38, 0, 114);
+  -webkit-box-shadow: 0px 8px 24px 0px rgb(38, 0, 114);
+  -moz-box-shadow: 0px 8px 24px 0px rgb(38, 0, 114);
+  width: 200px;
+  height: 50px;
+  font-size: 1.1rem;
+}
+.selectedCoinsContainer {
+  border: 2px solid rgb(38, 0, 114);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #00071f, rgb(32, 1, 92));
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  width: 15%;
+  text-align: center;
+}
+.selectedCoinsChart {
+  border: 2px solid rgb(38, 0, 114);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #00071f, rgb(32, 1, 92));
+  text-align: center;
+  margin-top: 40px;
+}
+.selectedCoins {
+  display: flex;
+  column-gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+.selectedCoinsChart .selectedCoins {
+  flex-direction: row;
+}
+.coinSel {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  padding: 10px;
+  background: transparent;
+  border-radius: 10px;
+}
+.coinSel img {
+  width: 30px;
+}
+/* ######## COIN ######## */
+.coinContainer {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+  flex-direction: column;
+}
+.coin {
+  border-radius: 10px;
+  background: linear-gradient(0deg, #00071f, #000);
+  border: 1px solid #000e3a;
+  padding: 15px;
+  display: flex;
+  height: auto;
+  box-shadow: 0px 8px 24px -5px #001455;
+  -webkit-box-shadow: 0px 8px 24px -5px #001455;
+  -moz-box-shadow: 0px 8px 24px -5px #001455;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+}
+.coinHeader {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.coinData {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  text-align: right;
+}
+.coin img {
+  width: 40px;
+}
+.coinSymbol {
+  text-transform: uppercase;
+}
+.red {
+  color: rgb(148, 0, 0);
+}
+.green {
+  color: green;
 }
 
-.App-link {
-  color: #61dafb;
+/* ######## CHART ######## */
+.chartHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chartEl {
+  width: 65vw !important;
+  background-color: rgb(32, 1, 92) !important;
+  margin-top: 40px;
+  border-radius: 20px !important;
+  box-shadow: 0px 0px 24px 5px rgb(38, 0, 114);
+  -webkit-box-shadow: 0px 0px 24px 5px rgb(38, 0, 114);
+  -moz-box-shadow: 0px 0px 24px 5px rgb(38, 0, 114);
+  border: 5px solid rgb(23, 0, 70) !important;
+}
+.chartPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  background: url(https://media.istockphoto.com/id/1331702867/photo/block-chain-concept.jpg?b=1&s=170667a&w=0&k=20&c=iOYdKBFv6uAigH_im_fMw6VSLqfM6ydS_FrAeQRbtks=)
+    no-repeat;
+  background-size: cover;
+}
+/* ######## RESPONSIVE ######## */
+@media (max-width: 1300px) {
+  .chartEl {
+    width: 90vw !important;
+  }
+}
+@media (max-width: 900px) {
+  .App {
+    align-items: flex-end;
+  }
+  .selectedCoinsContainer {
+    width: 15%;
+    text-align: center;
+    min-width: 150px;
+  }
+  .coinContainer {
+    width: 85%;
+    margin-right: 20px;
+    margin-left: 150px !important;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 660px) {
+  .coin {
+    flex-direction: column;
+    width: 60vw;
   }
-  to {
-    transform: rotate(360deg);
+  .selectedCoinsChart {
+    max-width: 90%;
   }
+  .selectedCoinsChart .selectedCoins {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .coinData {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .coin h1 {
+    font-size: 1rem;
+  }
+  .coin img {
+    width: 30px;
+  }
+  .coin p {
+    font-size: 0.8rem;
+  }
+  .coin {
+    width: 45vw;
+  }
+}
+/* ######## EFFECTS ######## */
+button:hover {
+  cursor: pointer;
+  box-shadow: 0px 8px 24px 0px rgb(65, 0, 194);
+  -webkit-box-shadow: 0px 8px 24px 0px rgb(65, 0, 194);
+  -moz-box-shadow: 0px 8px 24px 0px rgb(65, 0, 194);
+}
+.coin:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+}
+.coinSel:hover {
+  cursor: pointer;
+  background-color: rgb(54, 0, 161);
 }
