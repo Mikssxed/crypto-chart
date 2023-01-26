@@ -117,6 +117,9 @@ function App() {
                 );
               })}
             </div>
+            <button onClick={seeChart} className="coinButton active">
+              Chart!
+            </button>
           </div>
           <div className="coinSearch">
             <form>
